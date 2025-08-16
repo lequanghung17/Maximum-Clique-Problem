@@ -187,37 +187,6 @@ def MCP(cnf_file, n, edges, k,timeout=300 ):
     else:
         return None
 
-# if __name__ == "__main__":
-#     n, edges = read_clq_file("C125.9.clq.txt")
-#     max_clique = []
-    
-#     print(f"Graph has {n} vertices and {len(edges)} edges")
-    
-#     # range
-#     left, right = 30, 35  
-#     best_k = 0
-    
-#     while left <= right:
-#         k = (left + right) // 2
-#         print(f"\n--- Trying to find a clique of size {k} ---")
-#         clique = MCP(None, n, edges, k, timeout=300)
-        
-#         if clique is not None:
-#             max_clique = clique
-#             best_k = k
-#             print(f"✓ Found a clique of size {k}")
-#             left = k + 1  # Try larger
-#         else:
-#             print(f"✗ No clique of size {k} exists")
-#             right = k - 1  # Try smaller
-    
-#     # Print the final result
-#     if max_clique:
-#         print("\n=== RESULTS ===")
-#         print(f"Maximum clique size: {best_k}")
-#         print(f"Clique vertices: {sorted(max_clique)}")
-        
-        # Verify the solution is correct
 
 if __name__ == "__main__":
     fname = "instances/keller4.clq.txt"

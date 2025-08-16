@@ -254,13 +254,14 @@ def MCP(n, edges, k, timeout=300):
         # Verify the solution is correct
 
 if __name__ == "__main__":
-    fname = "instances/C1000.9.clq.txt"
+    fname = "instances/p_hat700-1.clq.txt"
     n, edges = read_clq_file(fname)
     results = []
 
     print(f"\n===== FILE: {fname} | {n} vertices, {len(edges)} edges =====")
 
-    lb = greedy_clique(n, edges)
+    #lb = greedy_clique(n, edges)
+    lb = 9
     ub = eigenvalue_upper_bound(n, edges)
     print(f"Lower bound: {lb} | Upper bound: {ub}")
 
@@ -271,7 +272,7 @@ if __name__ == "__main__":
     # Duyệt tuyến tính từ lb lên ub
     for k in range(lb, ub + 1):
         print(f"Trying k={k}...", end=' ')
-        clique = MCP( n, edges, k, timeout=1000)
+        clique = MCP( n, edges, k, timeout=500)
         if clique is not None:
             print("✓", end="  ")
             max_clique = clique
